@@ -472,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   score: 0
+  CanChangeScene: 1
   coinInScene: []
   coinTaken: 0
   textScore: {fileID: 1941791094}

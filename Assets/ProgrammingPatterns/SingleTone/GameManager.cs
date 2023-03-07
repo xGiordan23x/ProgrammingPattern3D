@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         get => score;
         set => score = value;
     }
+    [SerializeField] private bool CanChangeScene;
 
     [SerializeField] public List<GameObject> coinInScene;
     [SerializeField] public int coinTaken;
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (coinInScene.Count != 0)
         {
 
-            if (coinTaken == coinInScene.Count)
+            if (coinTaken == coinInScene.Count && CanChangeScene == true)
             {
                 ChangeScene(1);
             }

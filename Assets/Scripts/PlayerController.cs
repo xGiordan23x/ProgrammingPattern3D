@@ -30,4 +30,13 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Coin>() != null)
+        {
+            Coin coin = other.GetComponent<Coin>();
+            coin.PickedUp();
+        }
+    }
 }
