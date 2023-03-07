@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,23 +6,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 0.3f;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float jumpForce = 400;
+
+
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        
-        rb= GetComponent<Rigidbody>();   
+
+        rb = GetComponent<Rigidbody>();
 
     }
     private void Start()
     {
-        
+
     }
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal") * speed;
         float vertical = Input.GetAxis("Vertical") * speed;
 
-        transform.Translate(horizontal,0,vertical);
+        transform.Translate(horizontal, 0, vertical);
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -33,10 +35,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Coin>() != null)
+        if (other.GetComponent<Coin>() != null)
         {
             Coin coin = other.GetComponent<Coin>();
-            coin.PickedUp();
+            if (coin.alreadyPicked == false)
+            {
+                coin.PickedUp();
+            }
         }
     }
+
+
+
+
+   
 }

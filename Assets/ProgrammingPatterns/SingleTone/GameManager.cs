@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        textScore.text = score.ToString();
+       
         if (coinInScene.Count != 0)
         {
 
@@ -75,5 +76,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(levelDeestination);
     }
 
-
+    internal void SetScore() =>  textScore.text = score.ToString();
+    
 }

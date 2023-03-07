@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private int coinValue = 10;
-    [SerializeField] private float RotationSped;
+    [SerializeField] private int coinValue;
+    [SerializeField] private float RotationSpeed =100;
+    [SerializeField] public bool alreadyPicked = false;
 
     internal void PickedUp()
     {
         Debug.Log("giocatore ha raccolto una moneta");
-        GameManager.Instance.Score++;
+        GameManager.Instance.Score += coinValue;
+        GameManager.Instance.SetScore();
         GameManager.Instance.coinTaken += coinValue;
+        alreadyPicked= true;
         Destroy(gameObject);
     }
 
@@ -27,6 +30,6 @@ public class Coin : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(Vector3.up * RotationSped * Time.deltaTime); 
+        transform.Rotate(Vector3.up * RotationSpeed * Time.deltaTime); 
     }
 }
