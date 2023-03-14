@@ -18,5 +18,7 @@ public class AchievementManager : MonoBehaviour, IObserver
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         PlayerControlleConObserver player = playerObject.GetComponent<PlayerControlleConObserver>();
         player.AddObserver(this);
+
+        
     }
 }

@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IObserver 
 {
     void OnPlayerScoreChanged(int newScore);
+    
 }
