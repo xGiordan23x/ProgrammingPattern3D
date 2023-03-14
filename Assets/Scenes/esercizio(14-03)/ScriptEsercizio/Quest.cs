@@ -20,6 +20,7 @@ public class Quest : MonoBehaviour
     public int quantity;
     [Header("GoToLocation")]
     public string tagOfLocationToReach;
+    
 
    
 }

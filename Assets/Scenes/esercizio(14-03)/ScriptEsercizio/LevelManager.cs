@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour, InterfaceObserver
 
     private void LevelUp()
     {
+        LvlText.GetComponent<Animator>().SetTrigger("LevelUp");
         playerLvl++;
         totalLevelExp += 20000;
         currentExp= 0;
@@ -59,5 +60,10 @@ public class LevelManager : MonoBehaviour, InterfaceObserver
     {
         LvlText.text = playerLvl.ToString();
         currentExpTextAndTotalLEvelExp.text = (currentExp.ToString() + "/" + totalLevelExp.ToString());
+    }
+
+    public void IncreaseLevel()
+    {
+       
     }
 }
